@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>我的渗透利器 | Cancer-Hex</title>
+  <meta name="author" content="Satan">
+  
+  <meta name="description" content="我的渗透利器Firefox下
+Firebug，调试js，HTTP请求响应观察，Cookie，DOM树观察等；
+GreaseMonkey，自己改了个Cookie修改脚本，其他同学可以用这款：Original Cookie Injector for Greasemonkey；
+Noscript，进行一些js的阻断；
+AutoProxy，翻墙必备；
+
+Chrome下
+F12打开开发者工具，功能==Firebug+本地存储观察等；
+SwichySharp，翻墙必备；
+Cookie修改脚本，自己写了一个Chrome扩展（已开源：Cookie利用神器：CookieHacker），其他同学可以自己到Chrome扩展搜个好用的；
+
+前端渗透工具
+XSS’OR，我开发的，常用其中加解密与代码生成，源码放到了这：evilcos/xssor · GitHub；
+XSSEE 3.0 Beta，Monyer开发的，加解密最好用神器；
+Online JavaScript beautifier，js美化工具，分析js常用；
+前端攻击框架，推荐BeEF及一些小伙伴开发的XSS盲打工具，我自己也有款，不过不轻易示人；
+
+HTTP代理工具
+Fiddler，即可，不用再寻找其他的了，其中的watcher插件可以玩玩，找漏洞的；
+Burp Suite，神器，不仅HTTP代理，还有爬虫、漏洞扫描、渗透、爆破等功能；
+
+漏洞扫描工具"> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="我的渗透利器"/>
+  <meta property="og:site_name" content="Cancer-Hex"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/cancer-hex.github.io/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/cancer-hex.github.io/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/cancer-hex.github.io/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/cancer-hex.github.io/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/cancer-hex.github.io/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/cancer-hex.github.io/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/cancer-hex.github.io/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/cancer-hex.github.io/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/cancer-hex.github.io/">Cancer-Hex</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/cancer-hex.github.io/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/cancer-hex.github.io/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/cancer-hex.github.io/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/cancer-hex.github.io/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/cancer-hex.github.io/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 我的渗透利器</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="我的渗透利器"><a href="#我的渗透利器" class="headerlink" title="我的渗透利器"></a>我的渗透利器</h1><h2 id="Firefox下"><a href="#Firefox下" class="headerlink" title="Firefox下"></a>Firefox下</h2><ul>
+<li>Firebug，调试js，HTTP请求响应观察，Cookie，DOM树观察等；</li>
+<li>GreaseMonkey，自己改了个Cookie修改脚本，其他同学可以用这款：Original Cookie Injector for Greasemonkey；</li>
+<li>Noscript，进行一些js的阻断；</li>
+<li>AutoProxy，翻墙必备；</li>
+</ul>
+<h2 id="Chrome下"><a href="#Chrome下" class="headerlink" title="Chrome下"></a>Chrome下</h2><ul>
+<li>F12打开开发者工具，功能==Firebug+本地存储观察等；</li>
+<li>SwichySharp，翻墙必备；</li>
+<li>Cookie修改脚本，自己写了一个Chrome扩展（已开源：Cookie利用神器：CookieHacker），其他同学可以自己到Chrome扩展搜个好用的；</li>
+</ul>
+<h2 id="前端渗透工具"><a href="#前端渗透工具" class="headerlink" title="前端渗透工具"></a>前端渗透工具</h2><ul>
+<li>XSS’OR，我开发的，常用其中加解密与代码生成，源码放到了这：evilcos/xssor · GitHub；</li>
+<li>XSSEE 3.0 Beta，Monyer开发的，加解密最好用神器；</li>
+<li>Online JavaScript beautifier，js美化工具，分析js常用；</li>
+<li>前端攻击框架，推荐BeEF及一些小伙伴开发的XSS盲打工具，我自己也有款，不过不轻易示人；</li>
+</ul>
+<h2 id="HTTP代理工具"><a href="#HTTP代理工具" class="headerlink" title="HTTP代理工具"></a>HTTP代理工具</h2><ul>
+<li>Fiddler，即可，不用再寻找其他的了，其中的watcher插件可以玩玩，找漏洞的；</li>
+<li>Burp Suite，神器，不仅HTTP代理，还有爬虫、漏洞扫描、渗透、爆破等功能；</li>
+</ul>
+<h2 id="漏洞扫描工具"><a href="#漏洞扫描工具" class="headerlink" title="漏洞扫描工具"></a>漏洞扫描工具</h2><ul>
+<li>AWVS，不仅漏扫方便，自带的一些小工具也好用；</li>
+<li>Python自写脚本/工具，好漏洞是你用AWVS等就能发现的？洗洗睡吧；</li>
+<li>Nmap，绝对不仅仅是端口扫描！几百个脚本；</li>
+</ul>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><ul>
+<li>sqlmap，SQL注入利用最牛神器，没有之一；</li>
+<li>Metasploit，主机渗透框架，而Web层面上的就是知道创宇里的一些好玩意了（我可能在吹牛）；</li>
+<li>一些社工平台，好的都匿了；</li>
+<li>Hydra，爆破必备；</li>
+</ul>
+<h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><ul>
+<li>Wireshark，抓包必备；</li>
+<li>tcpdump，Linux下命令行抓包，结果可以给Wireshark分析；</li>
+</ul>
+<h2 id="大数据平台"><a href="#大数据平台" class="headerlink" title="大数据平台"></a>大数据平台</h2><ul>
+<li>ZoomEye，知道创宇开放的一个网络空间搜索引擎，搜搜组件就知道：ZoomEye（钟馗之眼）；</li>
+<li>SHODAN， 老外开放的一个网络空间搜索引擎，搜搜主机设备就知道：SHODAN – Computer Search Engine；</li>
+<li>Google，：）</li>
+</ul>
+<h4 id="更多自己看看Kali-Linux（老的是：BackTrack）。"><a href="#更多自己看看Kali-Linux（老的是：BackTrack）。" class="headerlink" title="更多自己看看Kali Linux（老的是：BackTrack）。"></a>更多自己看看Kali Linux（老的是：BackTrack）。</h4><h4 id="节省生命推荐：熟练Linux众多命令-Vim。"><a href="#节省生命推荐：熟练Linux众多命令-Vim。" class="headerlink" title="节省生命推荐：熟练Linux众多命令+Vim。"></a>节省生命推荐：熟练Linux众多命令+Vim。</h4><h4 id="原文：http-evilcos-me-p-336"><a href="#原文：http-evilcos-me-p-336" class="headerlink" title="原文：http://evilcos.me/?p=336"></a>原文：<a href="http://evilcos.me/?p=336" target="_blank" rel="noopener">http://evilcos.me/?p=336</a></h4>
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.
+</div>
+
+	</div>
+
+	
+	<span id="/cancer-hex.github.io/2019/04/19/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/" class="leancloud-visitors view" data-flag-title="我的渗透利器">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/cancer-hex.github.io/2019/04/19/ARP欺骗/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/cancer-hex.github.io/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/cancer-hex.github.io/2014/03/16/hello-world/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2019-04-19 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/cancer-hex.github.io/tags/Network-Security/">Network Security<span>2</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2020 Satan's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/cancer-hex.github.io/js/jquery.imagesloaded.min.js"></script>
+<script src="/cancer-hex.github.io/js/gallery.js"></script>
+<script src="/cancer-hex.github.io/js/bootstrap.min.js"></script>
+<script src="/cancer-hex.github.io/js/main.js"></script>
+<script src="/cancer-hex.github.io/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/cancer-hex.github.io/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/cancer-hex.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/cancer-hex.github.io/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

@@ -123,6 +123,150 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/cancer-hex.github.io/2019/04/19/ARP欺骗/" >Kali 下使用 Ettercap 进行ARP欺骗</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2019-04-19  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Kali-下使用-Ettercap-进行ARP欺骗"><a href="#Kali-下使用-Ettercap-进行ARP欺骗" class="headerlink" title="Kali 下使用 Ettercap 进行ARP欺骗"></a>Kali 下使用 Ettercap 进行ARP欺骗</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><pre><code>虽然计算机之间通信需要对方的ip，但是最底层的传输是物理层上，传输的是MAC帧，讲ip解析成MAC地址的是ARP缓存表，这个缓存表每个网络层设备都有。
+主机A要和主机B通信，知道主机A的ip，但是arp缓存表了没有主机B的MAC地址，于是他会在局域网内广播询问主机B的mac,主机B会应答自己的MAC.(注：因为每个主机的ip是不固定的，所以设备的arp缓存表也要每隔一段时间都会更新，发起广播)
+这种工作方式有一个BUG，就是如果主机C不停的应答自己的MAC，主机A广播询问主机B的MAC时，主机C应答自己的MAC，这时主机A中就会以为主机C是主机B。
+当你在浏览器中输入www.baidu.com的时候，要先对该域名发给DNS服务器进行解析，DNS服务器的地址是外网ip，网络数据要先通过网关，如果把攻击者的mac伪造成网关的MAC，局域网内本来要发给网关的数据发给攻击者，攻击者就可以对这些数据进行截获。
+被攻击者请求解析百度的时候攻击者截获请求，并解析成自己的ip，并配置好自己的伪造的百度首页，被攻击者这样就打开的是你伪造的百度。当然，你不一定非要伪造百度，你可以弄个钓鱼网站或恶搞网站。</code></pre><h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h2><p>-环境准备</p>
+<p>   1.kali虚拟机，网络使用桥接模式,ip:192.168.1.104 (kali官网 <a href="https://www.kali.org/" target="_blank" rel="noopener">https://www.kali.org/</a>)<br>   2.Windows10主机,ip:192.168.1.103</p>
+<p>-实现步骤</p>
+<p>   1.kali虚拟机桥接模式上网，并且配置好网络<br>   2.在kali的 /var/www/html 文件夹中编辑 index.html 页面（arp攻击成功时你想让对方看到的页面）<br>   3.编辑 etter.dns 文件，（域名    A    ip    ）表示要截获的域名并解析成的ip，<em>代表所有域名。<br>   在终端中输入：<br>   <code>vim /etc/ettercap/etter.dns</code><br>   增加一行：<br>   ‘*`</em>   A      ip<code>![ettercap](https://s2.ax1x.com/2019/04/19/E9HoFO.png)
+   ip设置为本机IP即可
+   4.在终端中输入：</code>/etc/init.d/apache2 start<code>启动 apache web 服务器
+   5.在终端中输入：</code>ettercap -G`<br>   打开ettercap的图形界面<br>   <img src="https://s2.ax1x.com/2019/04/19/E9H5TK.png" alt="ettercap"><br>   6.选择网卡<br>   <img src="https://s2.ax1x.com/2019/04/19/E9Hhex.png" alt="eth0"><br>   7.扫描当前网段的主机，打开主机列表<br>   <img src="https://s2.ax1x.com/2019/04/19/E9Hqld.png" alt="host"><br>   8.把要攻击的主机添加标记1，网关添加标记2<br>   <img src="https://s2.ax1x.com/2019/04/19/E9HWO1.png" alt="target"><br>   9.选择arp中间人攻击<br>   <img src="https://s2.ax1x.com/2019/04/19/E9H4w6.png" alt="ARP poisoning"><br>   <img src="https://s2.ax1x.com/2019/04/19/E9H7fe.png" alt="Sniff"><br>   10.双击插件dns_spoof。左边会出现一个*说明添加成功<br>   <img src="https://s2.ax1x.com/2019/04/19/E9HTYD.png" alt="Manage"><br>   <img src="https://s2.ax1x.com/2019/04/19/E9HL6A.png" alt="Strat"><br>   11.选择开始攻击<br>   <img src="https://s2.ax1x.com/2019/04/19/E9HbSH.png" alt="Strat"><br>   12.一段时间后在实体机上打开百度</p>
+<h2 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h2><p>1.把路由器的地址池缩小到100-254。把主机的ip设置成静态ip（缩小地址池是为了防止动态ip和静态ip冲突）</p>
+	
+
+	</div>
+  <a type="button" href="/cancer-hex.github.io/2019/04/19/ARP欺骗/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Kali-下使用-Ettercap-进行ARP欺骗"><a href="#Kali-下使用-Ettercap-进行ARP欺骗" class="headerlink" title="Kali 下使用 Ettercap 进行ARP欺骗"></a>Kali 下使用 Ettercap 进行ARP欺骗</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><pre><code>虽然计算机之间通信需要对方的ip，但是最底层的传输是物理层上，传输的是MAC帧，讲ip解析成MAC地址的是ARP缓存表，这个缓存表每个网络层设备都有。
+主机A要和主机B通信，知道主机A的ip，但是arp缓存表了没有主机B的MAC地址，于是他会在局域网内广播询问主机B的mac,主机B会应答自己的MAC.(注：因为每个主机的ip是不固定的，所以设备的arp缓存表也要每隔一段时间都会更新，发起广播)
+这种工作方式有一个BUG，就是如果主机C不停的应答自己的MAC，主机A广播询问主机B的MAC时，主机C应答自己的MAC，这时主机A中就会以为主机C是主机B。
+当你在浏览器中输入www.baidu.com的时候，要先对该域名发给DNS服务器进行解析，DNS服务器的地址是外网ip，网络数据要先通过网关，如果把攻击者的mac伪造成网关的MAC，局域网内本来要发给网关的数据发给攻击者，攻击者就可以对这些数据进行截获。
+被攻击者请求解析百度的时候攻击者截获请求，并解析成自己的ip，并配置好自己的伪造的百度首页，被攻击者这样就打开的是你伪造的百度。当然，你不一定非要伪造百度，你可以弄个钓鱼网站或恶搞网站。</code></pre><h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h2><p>-环境准备</p>
+<p>   1.kali虚拟机，网络使用桥接模式,ip:192.168.1.104 (kali官网 <a href="https://www.kali.org/" target="_blank" rel="noopener">https://www.kali.org/</a>)<br>   2.Windows10主机,ip:192.168.1.103</p>
+<p>-实现步骤</p>
+<p>   1.kali虚拟机桥接模式上网，并且配置好网络<br>   2.在kali的 /var/www/html 文件夹中编辑 index.html 页面（arp攻击成功时你想让对方看到的页面）<br>   3.编辑 etter.dns 文件，（域名    A    ip    ）表示要截获的域名并解析成的ip，<em>代表所有域名。<br>   在终端中输入：<br>   <code>vim /etc/ettercap/etter.dns</code><br>   增加一行：<br>   ‘*`</em>   A      ip<code>![ettercap](https://s2.ax1x.com/2019/04/19/E9HoFO.png)
+   ip设置为本机IP即可
+   4.在终端中输入：</code>/etc/init.d/apache2 start<code>启动 apache web 服务器
+   5.在终端中输入：</code>ettercap -G`<br>   打开ettercap的图形界面<br>   <img src="https://s2.ax1x.com/2019/04/19/E9H5TK.png" alt="ettercap"><br>   6.选择网卡<br>   <img src="https://s2.ax1x.com/2019/04/19/E9Hhex.png" alt="eth0"><br>   7.扫描当前网段的主机，打开主机列表<br>   <img src="https://s2.ax1x.com/2019/04/19/E9Hqld.png" alt="host"><br>   8.把要攻击的主机添加标记1，网关添加标记2<br>   <img src="https://s2.ax1x.com/2019/04/19/E9HWO1.png" alt="target"><br>   9.选择arp中间人攻击<br>   <img src="https://s2.ax1x.com/2019/04/19/E9H4w6.png" alt="ARP poisoning"><br>   <img src="https://s2.ax1x.com/2019/04/19/E9H7fe.png" alt="Sniff"><br>   10.双击插件dns_spoof。左边会出现一个*说明添加成功<br>   <img src="https://s2.ax1x.com/2019/04/19/E9HTYD.png" alt="Manage"><br>   <img src="https://s2.ax1x.com/2019/04/19/E9HL6A.png" alt="Strat"><br>   11.选择开始攻击<br>   <img src="https://s2.ax1x.com/2019/04/19/E9HbSH.png" alt="Strat"><br>   12.一段时间后在实体机上打开百度</p>
+<h2 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h2><p>1.把路由器的地址池缩小到100-254。把主机的ip设置成静态ip（缩小地址池是为了防止动态ip和静态ip冲突）</p>
+	
+	</div>
+  <a type="button" href="/cancer-hex.github.io/2019/04/19/ARP欺骗/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/cancer-hex.github.io/2019/04/19/渗透工具/" >我的渗透利器</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2019-04-19  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="我的渗透利器"><a href="#我的渗透利器" class="headerlink" title="我的渗透利器"></a>我的渗透利器</h1><h2 id="Firefox下"><a href="#Firefox下" class="headerlink" title="Firefox下"></a>Firefox下</h2><ul>
+<li>Firebug，调试js，HTTP请求响应观察，Cookie，DOM树观察等；</li>
+<li>GreaseMonkey，自己改了个Cookie修改脚本，其他同学可以用这款：Original Cookie Injector for Greasemonkey；</li>
+<li>Noscript，进行一些js的阻断；</li>
+<li>AutoProxy，翻墙必备；</li>
+</ul>
+<h2 id="Chrome下"><a href="#Chrome下" class="headerlink" title="Chrome下"></a>Chrome下</h2><ul>
+<li>F12打开开发者工具，功能==Firebug+本地存储观察等；</li>
+<li>SwichySharp，翻墙必备；</li>
+<li>Cookie修改脚本，自己写了一个Chrome扩展（已开源：Cookie利用神器：CookieHacker），其他同学可以自己到Chrome扩展搜个好用的；</li>
+</ul>
+<h2 id="前端渗透工具"><a href="#前端渗透工具" class="headerlink" title="前端渗透工具"></a>前端渗透工具</h2><ul>
+<li>XSS’OR，我开发的，常用其中加解密与代码生成，源码放到了这：evilcos/xssor · GitHub；</li>
+<li>XSSEE 3.0 Beta，Monyer开发的，加解密最好用神器；</li>
+<li>Online JavaScript beautifier，js美化工具，分析js常用；</li>
+<li>前端攻击框架，推荐BeEF及一些小伙伴开发的XSS盲打工具，我自己也有款，不过不轻易示人；</li>
+</ul>
+<h2 id="HTTP代理工具"><a href="#HTTP代理工具" class="headerlink" title="HTTP代理工具"></a>HTTP代理工具</h2><ul>
+<li>Fiddler，即可，不用再寻找其他的了，其中的watcher插件可以玩玩，找漏洞的；</li>
+<li>Burp Suite，神器，不仅HTTP代理，还有爬虫、漏洞扫描、渗透、爆破等功能；</li>
+</ul>
+<h2 id="漏洞扫描工具"><a href="#漏洞扫描工具" class="headerlink" title="漏洞扫描工具"></a>漏洞扫描工具</h2>
+	
+
+	</div>
+  <a type="button" href="/cancer-hex.github.io/2019/04/19/渗透工具/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="我的渗透利器"><a href="#我的渗透利器" class="headerlink" title="我的渗透利器"></a>我的渗透利器</h1><h2 id="Firefox下"><a href="#Firefox下" class="headerlink" title="Firefox下"></a>Firefox下</h2><ul>
+<li>Firebug，调试js，HTTP请求响应观察，Cookie，DOM树观察等；</li>
+<li>GreaseMonkey，自己改了个Cookie修改脚本，其他同学可以用这款：Original Cookie Injector for Greasemonkey；</li>
+<li>Noscript，进行一些js的阻断；</li>
+<li>AutoProxy，翻墙必备；</li>
+</ul>
+<h2 id="Chrome下"><a href="#Chrome下" class="headerlink" title="Chrome下"></a>Chrome下</h2><ul>
+<li>F12打开开发者工具，功能==Firebug+本地存储观察等；</li>
+<li>SwichySharp，翻墙必备；</li>
+<li>Cookie修改脚本，自己写了一个Chrome扩展（已开源：Cookie利用神器：CookieHacker），其他同学可以自己到Chrome扩展搜个好用的；</li>
+</ul>
+<h2 id="前端渗透工具"><a href="#前端渗透工具" class="headerlink" title="前端渗透工具"></a>前端渗透工具</h2><ul>
+<li>XSS’OR，我开发的，常用其中加解密与代码生成，源码放到了这：evilcos/xssor · GitHub；</li>
+<li>XSSEE 3.0 Beta，Monyer开发的，加解密最好用神器；</li>
+<li>Online JavaScript beautifier，js美化工具，分析js常用；</li>
+<li>前端攻击框架，推荐BeEF及一些小伙伴开发的XSS盲打工具，我自己也有款，不过不轻易示人；</li>
+</ul>
+<h2 id="HTTP代理工具"><a href="#HTTP代理工具" class="headerlink" title="HTTP代理工具"></a>HTTP代理工具</h2><ul>
+<li>Fiddler，即可，不用再寻找其他的了，其中的watcher插件可以玩玩，找漏洞的；</li>
+<li>Burp Suite，神器，不仅HTTP代理，还有爬虫、漏洞扫描、渗透、爆破等功能；</li>
+</ul>
+<h2 id="漏洞扫描工具"><a href="#漏洞扫描工具" class="headerlink" title="漏洞扫描工具"></a>漏洞扫描工具</h2>
+	
+	</div>
+  <a type="button" href="/cancer-hex.github.io/2019/04/19/渗透工具/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/cancer-hex.github.io/2014/03/16/hello-world/" title="Hello World">Hello World</a>
 		</h3>
 		</div>
@@ -231,6 +375,8 @@
 		
 			<li><a href="/cancer-hex.github.io/tags/Hello-World/">Hello World<span>1</span></a></li>
 		
+			<li><a href="/cancer-hex.github.io/tags/Network-Security/">Network Security<span>2</span></a></li>
+		
 		 
 		</ul>
 	</div>
@@ -241,6 +387,14 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/cancer-hex.github.io/2019/04/19/ARP欺骗/" ><i class="fa fa-file-o"></i>Kali 下使用 Ettercap 进行ARP欺骗</a>
+      </li>
+    
+      <li>
+        <a href="/cancer-hex.github.io/2019/04/19/渗透工具/" ><i class="fa fa-file-o"></i>我的渗透利器</a>
+      </li>
     
       <li>
         <a href="/cancer-hex.github.io/2014/03/16/hello-world/"  title="Hello World" ><i class="fa fa-file-o"></i>Hello World</a>
